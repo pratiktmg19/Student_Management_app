@@ -1,0 +1,96 @@
+<!-- <div class="filter">
+ 
+
+</div> -->
+
+<!-- <table mat-table [dataSource]="datasource" class="mat-elevation-z8" matSort matSortStart="aesc"> -->
+
+<!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+<!-- Position Column -->
+
+
+<!-- Name Column -->
+<!-- <ng-container matColumnDef="Name">
+
+      
+      
+    </ng-container> -->
+
+<!-- <ng-container matColumnDef="photo">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"> <img mat-card-avatar [src]=" 'http://localhost:3000/uploads/' + element.file "> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container> -->
+
+<!-- <ng-container matColumnDef="Name">
+
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element" >
+        <!- <mat-card>
+          <mat-card-header> -->
+<!-- <img mat-card-avatar [src]=" 'http://localhost:3000/uploads/' + element.file " style="float:left;"> -->
+
+<!-- <span class="name" >{{element.name}}</span> -->
+<!-- </mat-card-header>
+        </mat-card>  -->
+
+<!-- </ng-container> -->
+
+<!-- 
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Department </th>
+        <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+    </ng-container> -->
+
+<!-- Symbol Column -->
+<!-- <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Details / Update / Delete</th>
+        <td mat-cell *matCellDef="let row; let element;">
+            <button mat-icon-button (click)="detailsDialog(element)" title="details"><mat-icon>details</mat-icon></button>
+
+            <button mat-icon-button [routerLink]="['/update',element._id]" title="update"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button (click)="delete(element._id)" title="delete"><mat-icon>delete</mat-icon></button>
+        </td>
+    </ng-container> -->
+
+
+
+<!-- <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)" ></tr>
+
+</table> -->
+
+<!-- <mat-paginator [pageSize]="5" [pageSizeOptions]="['3','5','10','15']" showFirstLastButtons></mat-paginator> -->
+
+<mat-form-field>
+    <input matInput type="text" placeholder="Filter" [(ngModel)]="test">
+</mat-form-field>
+
+<mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let data of datasource | filter:test" (click)="detailsDialog(data)">
+        <img matListAvatar [src]="'http://localhost:3000/uploads/' + data.file">
+        <h4 mat-line>{{data.name}}</h4>
+        <p mat-line>{{data.department}}</p>
+        <mat-divider></mat-divider>
+    </mat-list-option>
+</mat-selection-list>
+
+
+
+
+<div class="fab">
+    <button mat-fab color="primary" (click)="openDialog()">
+      <mat-icon>person_add</mat-icon>
+    </button>
+</div>

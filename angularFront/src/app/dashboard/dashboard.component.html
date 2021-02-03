@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.7%" fxLayoutAlign="center">
+    <mat-card fxFlex="30%">
+        <mat-card-header></mat-card-header>
+        <mat-list>
+            <mat-list-item> Number of Students : {{TotalStudents}}</mat-list-item>
+            <mat-list-item>ME: {{ME}}</mat-list-item>
+            <mat-list-item>ECE : {{ECE}} </mat-list-item>
+            <mat-list-item>EE : {{EE}}</mat-list-item>
+            <mat-list-item>CSE : {{CSE}} </mat-list-item>
+            <mat-list-item>IT : {{IT}}</mat-list-item>
+        </mat-list>
+    </mat-card>
+
+
+
+    <!-- <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="ChartType"></canvas> -->
+    <mat-card fxFlex="50%">
+        <canvas id="chartOne"></canvas>
+    </mat-card>
+
+
+</div>

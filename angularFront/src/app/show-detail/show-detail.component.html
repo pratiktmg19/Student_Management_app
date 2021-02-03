@@ -1,0 +1,47 @@
+<div>
+    <h2>{{data.element.name}}</h2>
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    <mat-dialog-actions align="end">
+        <button mat-icon-button title="copy" (click)="onCopy()">
+      <mat-icon>content_copy</mat-icon>
+    </button>
+
+        <button mat-icon-button title="delete" (click)="onDelete(data.element._id)" [mat-dialog-close]="true">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+        <a [routerLink]="['/update', data.element._id]"> <button mat-icon-button title="edit">
+      <mat-icon>edit</mat-icon>
+    </button>
+        </a>
+
+        <button mat-icon-button title="close" [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+    </mat-dialog-actions>
+
+
+    <img mat-card-avatar [src]="'http://localhost:3000/uploads/' + data.element.file">
+    <!-- <strong>{{data.element.name |uppercase}} </strong> -->
+    <br>
+    <mat-divider></mat-divider>
+    <!-- exclude mat-icon from pre -->
+    <mat-list>
+        <mat-list-item>
+            <mat-icon>school</mat-icon><span style="padding-left: 5px;"></span><b>Department</b> : {{data.element.department}} </mat-list-item>
+        <mat-list-item>
+            <mat-icon>email</mat-icon><span style="padding-left: 5px;"></span><b>Email</b> : {{data.element.email}}</mat-list-item>
+        <mat-list-item>
+            <mat-icon>location_on</mat-icon><span style="padding-left: 5px;"></span><b>Address</b> : {{data.element.address}}</mat-list-item>
+        <mat-list-item>
+            <mat-icon>phone</mat-icon><span style="padding-left: 5px;"></span><b>Phone</b> : {{data.element.phone}}</mat-list-item>
+        <mat-list-item>
+            <mat-icon>architecture</mat-icon><span style="padding-left: 5px;"></span><b>RollNo</b> : {{data.element.rollNo}}</mat-list-item>
+        <mat-list-item>
+            <mat-icon>timeline</mat-icon><span style="padding-left: 5px;"></span><b>PassingYear</b> : {{data.element.passingYear}}</mat-list-item>
+
+    </mat-list>
+
+</div>

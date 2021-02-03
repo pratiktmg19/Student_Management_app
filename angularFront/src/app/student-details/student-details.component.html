@@ -1,0 +1,73 @@
+<div class="container">
+    <h2>
+        Edit Student
+    </h2>
+    <mat-divider></mat-divider>
+    <!-- <button mat-icon-button color="primary" (click)="back()" style="top:75px; left:40px; position:fixed;"><mat-icon>keyboard_backspace</mat-icon></button> -->
+
+
+    <form [formGroup]="studentForm" (ngSubmit)=" studentForm.valid && update()">
+
+        <!--       
+        <input matInput placeholder="Subhankar Roy" [(ngModel)]="this.studentDetail.name" formControlName="name">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- </mat-form-field> -->
+        <img mat-card-avatar [src]="'http://localhost:3000/uploads/' + this.studentDetail.file">
+        <app-app-upload formControlName="image" name="image"></app-app-upload>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Student Name</mat-label>
+            <input matInput placeholder="Pratik Tamang" [(ngModel)]="this.studentDetail.name" formControlName="name">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="1234567890" [(ngModel)]="this.studentDetail.phone" formControlName="phone">
+            <mat-icon matSuffix>call</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email Address</mat-label>
+            <input matInput placeholder="example@gmail.com" [(ngModel)]="this.studentDetail.email" formControlName="email">
+            <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="MIRIK" [(ngModel)]="this.studentDetail.address" formControlName="address">
+            <mat-icon matSuffix>place</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Passing Year</mat-label>
+            <input matInput placeholder="2022" [(ngModel)]="this.studentDetail.passingYear" formControlName="passingYear">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Department</mat-label>
+            <input matInput placeholder="CSE/IT/ME/EE/MCA" [(ngModel)]="this.studentDetail.department" formControlName="department">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>University Roll Number</mat-label>
+            <input matInput placeholder="10200219059" [(ngModel)]="this.studentDetail.rollNo" formControlName="rollNo">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-dialog-actions align="end">
+            <button mat-raised-button mat-dialog-close>cancel</button>
+
+            <button mat-raised-button [mat-dialog-close]="true" type="submit" cdkFocusInitial>Save</button>
+
+        </mat-dialog-actions>
+    </form>
+</div>

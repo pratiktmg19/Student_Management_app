@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+    width: 500px;
+    /* width: 70%; */
+}
+
+.medium-list {
+    margin: 40px auto;
+    width: 40%;
+    padding: 10px;
+    /* border-color:whitesmoke; */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.space {
+    margin-right: 20px;
+}
+
+.header {
+    text-align: center;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.card-image {
+    background-image: url('./assets/IMG20180415110659.jpg');
+}
+
+table {
+    width: 75%;
+    margin: 20px auto;
+}
+
+.fab {
+    position: fixed;
+    z-index: 1;
+    bottom: 50px;
+    right: 50px;
+}
+
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    /* For macOS/iOS Safari */
+    top: 0;
+    /* Sets the sticky toolbar to be on top */
+    z-index: 1000;
+    /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: auto;
+    }
+}

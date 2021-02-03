@@ -1,0 +1,19 @@
+img {
+    width: 80px;
+    height: 90px;
+}
+
+
+/* .container {
+    width: 500%;
+} */
+
+mat-icon {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+}

@@ -1,0 +1,86 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #drawer #sidenav mode="over" closed>
+
+
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-avatar class="card-image"></div>
+
+                <mat-card-title></mat-card-title>
+                <mat-card-subtitle> </mat-card-subtitle>
+
+
+
+            </mat-card-header>
+            <mat-card-footer> <button mat-raised-button>profile</button></mat-card-footer>
+
+        </mat-card>
+        <mat-nav-list>
+            <a mat-list-item (click)="sidenav.close()" routerLinkActive="active-link" [routerLink]="['/dashboard']">
+                <mat-icon>apps</mat-icon> <span class="space"></span>Dashboard
+            </a>
+            <a mat-list-item (click)="sidenav.close()" routerLinkActive="active-link" [routerLink]="['/studentlist']">
+                <mat-icon>person</mat-icon> <span class="space"></span>Students
+            </a>
+            <a mat-list-item (click)="sidenav.close()" routerLinkActive="active-link">
+                <mat-icon>settings</mat-icon> <span class="space"></span> Settings
+            </a>
+            <a mat-list-item (click)="sidenav.close()" href="#">
+                <mat-icon>help</mat-icon> <span class="space"></span> Help
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="warm" *ngIf="nav.visible">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+            <span class="space"></span>
+            <div>
+                <span *ngIf="routes.route=='/dashboard'">Dashboard</span>
+                <span *ngIf="routes.route=='/studentlist'">Students</span>
+                <span *ngIf="routes.route=='/settings'">Settings</span>
+                <span *ngIf="routes.route=='/help'">Help</span>
+                <span *ngIf="routes.route=='/update/:id'">Update</span>
+
+            </div>
+            <span class="spacer"></span>
+
+            <!-- <mat-form-field  color="accent" floatLabel="never">
+        <input matInput formControlName="email" placeholder="Search" >
+        <mat-icon>search</mat-icon>
+      </mat-form-field> -->
+
+            <button matBadge="5" matBadgePosition="above after" mat-icon-button>
+        <mat-icon>notifications</mat-icon>
+      </button>
+
+            <button mat-icon-button [matMenuTriggerFor]="menulist">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+            <mat-menu #menulist>
+                <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+            </mat-menu>
+
+        </mat-toolbar>
+
+        <!-- Add Content Here -->
+
+        <div class="gap">
+            <router-outlet></router-outlet>
+
+        </div>
+
+
+
+    </mat-sidenav-content>
+
+
+</mat-sidenav-container>

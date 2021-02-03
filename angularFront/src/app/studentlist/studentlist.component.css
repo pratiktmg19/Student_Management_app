@@ -1,0 +1,17 @@
+mat-card-avatar {
+    background-size: cover;
+}
+
+.name {
+    margin-left: 20px;
+}
+
+mat-paginator {
+    width: 75%;
+    margin: auto;
+}
+
+.filter {
+    width: 50%;
+    margin-left: 165px;
+}

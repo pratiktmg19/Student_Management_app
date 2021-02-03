@@ -1,0 +1,40 @@
+
+<div class="medium-list" >
+  
+    <div>
+        <h2 class="mat-h2">Sign in</h2>      
+        
+    
+    <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onLoginSubmit()" >
+        <div class="form-container">
+            
+            <mat-form-field appearance="fill" color="accent">
+               
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Enter your Email">
+                <mat-icon matPrefix>email</mat-icon>
+                
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" color="accent">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" placeholder="Enter your Password">
+                <mat-icon matPrefix>https</mat-icon>
+            </mat-form-field>
+            <!-- <mat-form-field > 
+                <mat-label>ConfirmPassword</mat-label>
+                <input matInput formControlName="confirmPassword" [(ngModel)]="user.confirmPassword">
+            </mat-form-field> -->
+        </div>
+            <button mat-button mat-raised-button type="submit">Login</button>
+            <br>
+            <br>
+            <span>New here?</span>
+            <br>
+            <button mat-button mat-raised-button color="accent" routerLink="/register">Register</button>
+
+    </form>
+    </div>
+</div>
+
+
